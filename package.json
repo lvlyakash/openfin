@@ -1,10 +1,22 @@
 {
-  "name": "openfin-template",
-  "version": "0.0.0",
-  "devDependencies": {
-    "@types/openfin": "latest",
-    "hadouken-js-adapter": "latest",
-    "live-server": "latest"
+  "name": "openfin_login",
+  "version": "2.0.0",
+  "description": "openfin login",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
-  "license": "Apache-2.0"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-session": "^1.15.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "@types/openfin": "latest",
+    "hadouken-js-adapter": "latest"
+  }
 }
