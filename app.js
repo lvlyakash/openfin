@@ -10,13 +10,21 @@ app.use(express.static('./public'));
 //     res.sendFile('login.html')
 // });
 
-app.post('/login', function(req, res) {
+app.post('/login', function (req, res) {
     res.sendFile(path.join(__dirname, 'public/login.html'));
-  })
-  app.get('/login', function(req, res) {
+});
+
+app.get('/login', function (req, res) {
     res.sendFile(path.join(__dirname, 'public/login.html'));
-  })
-  
+});
+
+app.get('/apps/app1', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public/app1.html'));
+});
+app.get('/apps/app2', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public/app2.html'));
+});
+
 
 //To Launch the OpenFin Application we need a manifestUrl.
 const port = 5555;
@@ -35,7 +43,7 @@ http.createServer(app).listen(port, async () => {
 
     try {
         //Once the server is running we can launch OpenFin and retrieve the port.
-        const port1 = await openfinLauncher.launch({ manifestUrl : configPath });
+        const port1 = await openfinLauncher.launch({ manifestUrl: configPath });
 
         //We will use the port to connect from Node to determine when OpenFin exists.
         const fin = await openfinLauncher.connect({

@@ -1,16 +1,23 @@
-
-function setCookie(){
+function setCookie() {
     var d = new Date();
-    d.setTime(d.getTime() + (7*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
+    d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
     document.cookie = 'auth = 123345678;' + expires;
 }
 
-function destroyCookie(){
+function destroyCookie() {
     document.cookie = 'auth = ; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; ';
 }
 
-// // uncomment line below to register offline cache service worker 
+async function startApp(path) {
+    return fin.Application.start({
+      name: path,
+      uuid: path,
+      url: `http://localhost:5555/apps/${path}`,
+      autoShow: true
+  });
+}start().then(() => console.log('Application is running')).catch(err => console.log(err));
+// // // uncomment line below to register offline cache service worker 
 // // navigator.serviceWorker.register('../serviceworker.js');
 
 // if (typeof fin !== 'undefined') {

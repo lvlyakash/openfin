@@ -33,9 +33,14 @@
             <input type="password" name="pass">
             <br>
                 <button type="submit" onclick= "setCookie()">Submit</button>
-
         </form>
     </div>
+    <div id = 'disp'> 
+        
+    </div>
+    <script>
+        $('#disp').html("<p>Cookies: " + document.cookie + '</p>') 
+    </script>
     <script src="./js/main.js"></script>
 
 </body>

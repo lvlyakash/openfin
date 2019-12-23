@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 <body>
     <h1>Logged in</h1>
+    <button onclick="startApp('app1')">App1</button>
+    <button onclick="startApp('app2')">App2</button>
+
+
     <form action="/" method="get">
         <button type="submit" onclick="destroyCookie()">Logout</button>
     </form>
 
+    <p id='par'>Cookies</p>
+   
     <script src="./js/main.js"></script>
-    <script>
-        console.log(document.cookie);
+   <script>
+       $('#par').html("Cookies: " + document.cookie);
     </script>
 
 </body>
